@@ -129,31 +129,33 @@ export default (Base, {
         this.props.data :
         getByCurrPage(store, pageStartIndex);
 
-      return [
-        <Base key="table" { ...this.props } data={ data } />,
-        <Pagination
-          key="pagination"
-          dataSize={ options.totalSize || store.data.length }
-          currPage={ currPage }
-          currSizePerPage={ currSizePerPage }
-          onPageChange={ this.handleChangePage }
-          onSizePerPageChange={ this.handleChangeSizePerPage }
-          sizePerPageList={ options.sizePerPageList || Const.SIZE_PER_PAGE_LIST }
-          paginationSize={ options.paginationSize || Const.PAGINATION_SIZE }
-          pageStartIndex={ pageStartIndex }
-          withFirstAndLast={ withFirstAndLast }
-          alwaysShowAllBtns={ alwaysShowAllBtns }
-          hideSizePerPage={ hideSizePerPage }
-          hidePageListOnlyOnePage={ hidePageListOnlyOnePage }
-          firstPageText={ options.firstPageText || Const.FIRST_PAGE_TEXT }
-          prePageText={ options.prePageText || Const.PRE_PAGE_TEXT }
-          nextPageText={ options.nextPageText || Const.NEXT_PAGE_TEXT }
-          lastPageText={ options.lastPageText || Const.LAST_PAGE_TEXT }
-          prePageTitle={ options.prePageTitle || Const.PRE_PAGE_TITLE }
-          nextPageTitle={ options.nextPageTitle || Const.NEXT_PAGE_TITLE }
-          firstPageTitle={ options.firstPageTitle || Const.FIRST_PAGE_TITLE }
-          lastPageTitle={ options.lastPageTitle || Const.LAST_PAGE_TITLE }
-        />
-      ];
+      return (
+        <div>
+          <Base key="table" { ...this.props } data={ data } />
+          <Pagination
+            key="pagination"
+            dataSize={ options.totalSize || store.data.length }
+            currPage={ currPage }
+            currSizePerPage={ currSizePerPage }
+            onPageChange={ this.handleChangePage }
+            onSizePerPageChange={ this.handleChangeSizePerPage }
+            sizePerPageList={ options.sizePerPageList || Const.SIZE_PER_PAGE_LIST }
+            paginationSize={ options.paginationSize || Const.PAGINATION_SIZE }
+            pageStartIndex={ pageStartIndex }
+            withFirstAndLast={ withFirstAndLast }
+            alwaysShowAllBtns={ alwaysShowAllBtns }
+            hideSizePerPage={ hideSizePerPage }
+            hidePageListOnlyOnePage={ hidePageListOnlyOnePage }
+            firstPageText={ options.firstPageText || Const.FIRST_PAGE_TEXT }
+            prePageText={ options.prePageText || Const.PRE_PAGE_TEXT }
+            nextPageText={ options.nextPageText || Const.NEXT_PAGE_TEXT }
+            lastPageText={ options.lastPageText || Const.LAST_PAGE_TEXT }
+            prePageTitle={ options.prePageTitle || Const.PRE_PAGE_TITLE }
+            nextPageTitle={ options.nextPageTitle || Const.NEXT_PAGE_TITLE }
+            firstPageTitle={ options.firstPageTitle || Const.FIRST_PAGE_TITLE }
+            lastPageTitle={ options.lastPageTitle || Const.LAST_PAGE_TITLE }
+          />
+        </div>
+      );
     }
   };
